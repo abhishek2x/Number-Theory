@@ -4,17 +4,19 @@ Binary Exponentiation
 Calculating a^n
 Trick: Square the base 
 and reduce the power by 2
-* This is an important Algorithm
-Find: 2^13
 
-res    base    power
-   1      2       13      
-   2      2       12
-   2      4        6
-   2     16        3
-  32     16        2
-  32    256        1
-8192    256        0
+This is an important Algorithm**
+
+Example: Find - 2^13
+
+res      base    power
+   1  *     2       13 odd      
+   2        2       12
+   2        4        6 
+   2  *    16        3 odd 
+  32       16        2
+  32  *   256        1 odd
+8192      256        0
 
 
 * Copyright (c) 2020 Abhishek Srivastava

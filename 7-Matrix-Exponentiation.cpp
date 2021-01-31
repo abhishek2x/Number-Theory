@@ -10,7 +10,7 @@ find A^n
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long int
-# define N 101
+#define N 101
 
 int A[N][N], I[N][N];
 
@@ -31,16 +31,17 @@ void Mul(int A[][N], int B[][N], int n) {
 }
 
 void power(int A[][N], int dim, int n) {
+  
   for (int i = 0; i < dim; i++) {
     for (int j = 0; j < dim; j++) {
-      if(i == j) I[i][j] = 1;
+      if(i == j) I[i][j] = 1;         // I[i][j] = 1 ? i == j : 0;
       else I[i][j] = 0;
     }
   }
   
   // For Native
   // for (int i = 0; i < n; i++)
-  //   Mul(I, A, dim);
+  //   Mul(I, A, dim);   I=I*A
   
   // Optimised: Binary Exponential Method
   while(n) {
@@ -49,12 +50,12 @@ void power(int A[][N], int dim, int n) {
     }
     Mul(A, A, dim);
     n /= 2;
-  } 
+  }
 
   for (int i = 0; i < dim; i++)
     for (int j = 0; j < dim; j++)
       A[i][j] = I[i][j];
-} 
+}
 
 void printMat(int A[][N], int dim) {
   for (int i = 0; i < dim; i++)
@@ -79,7 +80,6 @@ int main(){
 
   power(A, dim, n);
   printMat(A, dim);
-
 
   return 0;
 }
