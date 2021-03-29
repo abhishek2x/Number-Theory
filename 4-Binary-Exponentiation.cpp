@@ -31,12 +31,9 @@ int Power(int base, int power) {
   while(power) {
     if(power%2) {
       res = res*base;
-      power--;
     }
-    else {
-      base *= base;
-      power /= 2;
-    }
+    base *= base;
+    power /= 2;
   }
   return res;
 }
